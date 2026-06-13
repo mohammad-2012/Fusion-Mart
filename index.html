@@ -1,0 +1,322 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+    <title>Fusion Mart | Smart Shopping Experience</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/sweetalert2@11.23.0/dist/sweetalert2.min.css"
+    />
+  </head>
+  <body>
+    <div class="app-wrapper">
+      <header class="header">
+        <a href="#" class="header-link" id="homeLink">
+          <i class="fas fa-gem"></i>
+          <span>Fusion Mart</span>
+        </a>
+        <div class="header-right">
+          <div class="search-wrapper">
+            <i class="fas fa-search search-icon"></i>
+            <input
+              type="text"
+              placeholder="Search products..."
+              id="search-input"
+              autocomplete="off"
+            />
+          </div>
+          <button class="cart-btn desktop-only" id="cartBtn">
+            <i class="fas fa-shopping-bag"></i>
+            <span class="cart-badge" id="cartBadge">0</span>
+          </button>
+          <button class="icon-btn desktop-only" id="wishlistHeaderBtn">
+            <i class="fas fa-heart"></i>
+            <span class="badge" id="headerWishlistBadge">0</span>
+          </button>
+          <button class="theme-toggle" id="themeToggle">
+            <i class="fas fa-moon"></i>
+          </button>
+        </div>
+      </header>
+
+      <main class="main-content">
+        <section class="hero-section" id="heroSection">
+          <div class="hero-content">
+            <div class="hero-icon">
+              <i class="fas fa-shopping-cart"></i>
+              <i class="fas fa-heart"></i>
+              <i class="fas fa-truck"></i>
+            </div>
+            <h1>Welcome to Fusion Mart</h1>
+            <p>Discover amazing products with exclusive deals</p>
+            <button class="shop-now-btn" id="shopNowHeroBtn">
+              Start Shopping →
+            </button>
+          </div>
+          <div class="features-row">
+            <div class="feature">
+              <i class="fas fa-shipping-fast"></i>
+              <span>Free Shipping</span>
+            </div>
+            <div class="feature">
+              <i class="fas fa-undo-alt"></i>
+              <span>30 Days Return</span>
+            </div>
+            <div class="feature">
+              <i class="fas fa-lock"></i>
+              <span>Secure Payment</span>
+            </div>
+            <div class="feature">
+              <i class="fas fa-headset"></i>
+              <span>24/7 Support</span>
+            </div>
+          </div>
+
+          <div class="home-categories">
+            <h3><i class="fas fa-tag"></i> Shop by Category</h3>
+            <div class="category-icons" id="homeCategoryIcons"></div>
+          </div>
+
+          <div class="horizontal-scroll-section">
+            <div class="section-title">
+              <h3><i class="fas fa-fire"></i> Trending Now</h3>
+              <button class="view-all-btn" id="viewAllTrending">
+                View All →
+              </button>
+            </div>
+            <div class="horizontal-scroll" id="trendingScroll">
+              <div class="loading-small">Loading...</div>
+            </div>
+          </div>
+
+          <div class="horizontal-scroll-section">
+            <div class="section-title">
+              <h3><i class="fas fa-bolt"></i> Just For You</h3>
+              <button class="view-all-btn" id="viewAllJustForYou">
+                View All →
+              </button>
+            </div>
+            <div class="horizontal-scroll" id="justForYouScroll">
+              <div class="loading-small">Loading...</div>
+            </div>
+          </div>
+
+          <div class="banner-promo">
+            <div class="promo-card">
+              <i class="fas fa-percent"></i>
+              <div>
+                <h4>Summer Sale!</h4>
+                <p>Up to 50% off</p>
+              </div>
+            </div>
+            <div class="promo-card">
+              <i class="fas fa-gift"></i>
+              <div>
+                <h4>Free Gift</h4>
+                <p>On orders $50+</p>
+              </div>
+            </div>
+            <div class="promo-card">
+              <i class="fas fa-star"></i>
+              <div>
+                <h4>New Arrivals</h4>
+                <p>Fresh collection</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="deal-section">
+            <h3>🔥 Flash Sale 🔥</h3>
+            <p>Get up to 70% off on selected items</p>
+            <div class="deal-timer" id="dealTimer">
+              <div class="timer-box">
+                <span id="hours">00</span>
+                <p>Hours</p>
+              </div>
+              <div class="timer-box">
+                <span id="minutes">00</span>
+                <p>Mins</p>
+              </div>
+              <div class="timer-box">
+                <span id="seconds">00</span>
+                <p>Secs</p>
+              </div>
+            </div>
+            <button class="shop-now-btn" id="flashSaleBtn">Shop Now →</button>
+          </div>
+
+          <div class="testimonials">
+            <h3><i class="fas fa-users"></i> What Our Customers Say</h3>
+            <div class="testimonial-grid">
+              <div class="testimonial-card">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <p>
+                  "Amazing quality and fast shipping! Highly recommend Fusion
+                  Mart."
+                </p>
+                <h4>- Sarah Johnson</h4>
+              </div>
+              <div class="testimonial-card">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <p>
+                  "Best shopping experience ever. The customer support is
+                  fantastic!"
+                </p>
+                <h4>Mohammad Akbari</h4>
+              </div>
+              <div class="testimonial-card">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <p>"Great products at affordable prices. Will shop again!"</p>
+                <h4>- Emily Rodriguez</h4>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="products-section" id="productsSection">
+          <div class="section-header">
+            <h2><i class="fas fa-store"></i> All Products</h2>
+            <div class="categories-wrapper" id="categoriesWrapper">
+              <div class="categories-scroll" id="categoriesScroll"></div>
+            </div>
+          </div>
+          <div class="loading-container" id="productsLoading">
+            <div class="spinner"></div>
+            <p>Loading amazing products...</p>
+          </div>
+          <div
+            class="products-grid"
+            id="productsGrid"
+            style="display: none"
+          ></div>
+
+          <div class="why-choose-us" id="whyChooseUs">
+            <h3><i class="fas fa-star"></i> Why Choose Us?</h3>
+            <div class="reasons">
+              <div class="reason">
+                <i class="fas fa-tag"></i>
+                <span>Best Prices Guaranteed</span>
+              </div>
+              <div class="reason">
+                <i class="fas fa-check-circle"></i>
+                <span>100% Authentic Products</span>
+              </div>
+              <div class="reason">
+                <i class="fas fa-gem"></i>
+                <span>Premium Quality</span>
+              </div>
+              <div class="reason">
+                <i class="fas fa-smile"></i>
+                <span>Happy Customers</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="cart-section" id="cartSection">
+          <div class="section-header">
+            <h2><i class="fas fa-shopping-bag"></i> My Cart</h2>
+          </div>
+          <div class="cart-content" id="cartContent"></div>
+          <div class="checkout-panel" id="checkoutPanel">
+            <div class="total-row">
+              <span>Total:</span>
+              <span class="total-price">$<span id="cartTotal">0.00</span></span>
+            </div>
+            <div class="checkout-actions">
+              <button class="btn-clear" id="clearCartBtn">Clear All</button>
+              <button class="btn-checkout" id="checkoutBtn">Checkout</button>
+            </div>
+          </div>
+        </section>
+
+        <section class="wishlist-section" id="wishlistSection">
+          <div class="section-header">
+            <h2><i class="fas fa-heart"></i> My Wishlist</h2>
+          </div>
+          <div class="wishlist-grid" id="wishlistGrid"></div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <div class="footer-content">
+          <div class="footer-brand">
+            <i class="fas fa-gem"></i>
+            <h3>Fusion Mart</h3>
+            <p>Your one-stop shop for everything</p>
+          </div>
+          <div class="footer-links">
+            <div class="link-group">
+              <h4>Quick Links</h4>
+              <a href="#" id="footerShopLink">Shop</a>
+              <a href="#" id="footerWishlistLink">Wishlist</a>
+              <a href="#" id="footerCartLink">Cart</a>
+            </div>
+            <div class="link-group">
+              <h4>Support</h4>
+              <a href="#">Help Center</a>
+              <a href="#">Returns</a>
+              <a href="#">Contact Us</a>
+            </div>
+            <div class="link-group">
+              <h4>Follow Us</h4>
+              <div class="social-icons">
+                <i class="fab fa-instagram"></i>
+                <i class="fab fa-twitter"></i>
+                <i class="fab fa-facebook"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2026 Fusion Mart. All rights reserved.</p>
+        </div>
+      </footer>
+
+      <nav class="bottom-nav" id="bottomNav">
+        <button class="nav-item active" data-section="hero">
+          <i class="fas fa-home"></i>
+          <span>Home</span>
+        </button>
+        <button class="nav-item" data-section="products">
+          <i class="fas fa-store"></i>
+          <span>Shop</span>
+        </button>
+        <button class="nav-item" data-section="wishlist">
+          <i class="fas fa-heart"></i>
+          <span>Wishlist</span>
+          <span class="nav-badge" id="mobileWishlistBadge">0</span>
+        </button>
+        <button class="nav-item" data-section="cart">
+          <i class="fas fa-shopping-bag"></i>
+          <span>Cart</span>
+          <span class="nav-badge" id="mobileCartBadge">0</span>
+        </button>
+      </nav>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.23.0/dist/sweetalert2.all.min.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>
